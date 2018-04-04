@@ -1,28 +1,45 @@
-<mat-toolbar color="accent">
-  <span>{{title}}</span>
+<app-sidenav></app-sidenav>
 
-  <button mat-button [matMenuTriggerFor]="seekerMenu">
-    <menu type="toolbar">Seeker</menu>
-  </button>
+<!-- <div class="flex-container">
 
-  <button mat-button [matMenuTriggerFor]="recruiterMenu">
-    <menu type="toolbar">Recruiter</menu>
-  </button>
+  <div class="flex-item">
+    <mat-toolbar color="accent">
+      <span>{{title}}</span>
+    
+      <button mat-button [matMenuTriggerFor]="seekerMenu">
+        <menu type="toolbar">Seeker</menu>
+      </button>
+    
+      <button mat-button [matMenuTriggerFor]="recruiterMenu">
+        <menu type="toolbar">Recruiter</menu>
+      </button>
+    
+    </mat-toolbar>
 
-</mat-toolbar>
+    <mat-menu #seekerMenu="matMenu">
+      <button mat-menu-item>
+        <a routerLink="/seeker/register">Register</a>
+      </button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
+    
+    <mat-menu #recruiterMenu="matMenu">
+      <button mat-menu-item>
+        <a routerLink="/recruiter/register">Register</a>
+      </button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
 
-<mat-menu #seekerMenu="matMenu">
-  <button mat-menu-item>
-    <a routerLink="/seeker/register">Register</a>
-  </button>
-  <button mat-menu-item>Help</button>
-</mat-menu>
+  </div>
 
-<mat-menu #recruiterMenu="matMenu">
-  <button mat-menu-item>
-    <a routerLink="/recruiter/register">Register</a>
-  </button>
-  <button mat-menu-item>Help</button>
-</mat-menu>
+  <div class="flex-item">
+    <router-outlet></router-outlet>
+  </div>
 
-<router-outlet></router-outlet>
+</div> -->
+
+
+
+
+
+

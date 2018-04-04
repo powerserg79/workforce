@@ -1,0 +1,23 @@
+<mat-sidenav-container class="app-sidenav-container" autosize>
+
+  <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10" mode="side">
+    <mat-toolbar color="primary">
+      <a class="logo" routerLink="/">Workforce.</a>
+    </mat-toolbar>
+
+    <mat-list>
+      <mat-list-item><a routerLink="/seeker/register">Register Seeker</a></mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <div class="app-sidenav-content">
+    <app-toolbar (sidenavTrigger)="sidenav.toggle()"></app-toolbar>
+    <router-outlet></router-outlet>
+
+    <!-- <button type="button" mat-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+
+    </button> -->
+  </div>
+
+</mat-sidenav-container>

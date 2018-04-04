@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '../shared/material.module';
+import { MaterialModule } from '../material.module';
 
 @NgModule({
   imports: [

@@ -9,7 +9,10 @@ import {
   MatGridListModule,
   MatFormFieldModule,
   MatInputModule,
-  MatStepperModule
+  MatStepperModule,
+  MatSidenavModule,
+  MatListModule,
+  MatCheckboxModule
 }
   from '@angular/material';
 
@@ -60,7 +63,10 @@ import {
     MatInputModule,
     MatButtonModule,
     MatStepperModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCheckboxModule
   ],
   exports: [
     MatMenuModule,
@@ -71,7 +77,10 @@ import {
     MatInputModule,
     MatButtonModule,
     MatStepperModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }

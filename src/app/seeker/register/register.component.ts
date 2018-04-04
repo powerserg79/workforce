@@ -10,6 +10,7 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule, FormBuilder } 
 export class RegisterComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
+  terms = new FormControl('', [Validators.required]);
   hidePassword = true;
 
   Step1Group: FormGroup;
@@ -24,7 +25,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.Step1Group = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      email: this.email,
+      password: this.password,
+      terms: this.terms 
     });
     this.Step2Group = this._formBuilder.group({
       firstCtrl: ['', Validators.required]

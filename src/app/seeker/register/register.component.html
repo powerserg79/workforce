@@ -19,36 +19,57 @@
   <mat-horizontal-stepper>
 
     <mat-step [stepControl]="Step1Group">
-        <form [formGroup]="Step1Group">
-            <ng-template matStepLabel>Login details</ng-template>
 
-            <mat-form-field>
-                <input matInput placeholder="Enter your email" [formControl]="email" required>
-                <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
-              </mat-form-field>
-          
-              <mat-form-field>
-                <input matInput placeholder="Enter a password" [type]="hidePassword ? 'password' : 'text'">
-                <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility' : 'visibility_off' }}</mat-icon>
-              </mat-form-field>
-          
-              <div>
-                  <button mat-button matStepperPrevious>Back</button>
-                  <button mat-button matStepperNext>Next</button>
-              </div>
-              
-        </form>
+      <form [formGroup]="Step1Group">
+
+        <ng-template matStepLabel>Login details</ng-template>
+
+        <div>
+          <mat-form-field>
+            <!-- [formControl]="email" required -->
+            <input matInput placeholder="Enter your email" formControlName="email">
+            <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Enter a password" formControlName="password" [type]="hidePassword ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-checkbox formControlName="terms">I agree with the
+            <a href="#">terms and conditions</a>
+          </mat-checkbox>
+
+        </div>
+        <div class="actions">
+          <!-- <button mat-button matStepperPrevious>Back</button> -->
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+
+      </form>
     </mat-step>
 
     <mat-step [stepControl]="Step2Group">
-        <ng-template matStepLabel>Personal details</ng-template>
+      <ng-template matStepLabel>Personal details</ng-template>
 
-        <p>hello</p>
+      <p>hello</p>
 
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-        </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+
+      <ng-template matStepLabel>Done.</ng-template>
+
+      <p>... and we're done.</p>
+
     </mat-step>
 
   </mat-horizontal-stepper>
