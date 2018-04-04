@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatGridListModule } from '@angular/material';
+
 import { SeekerModule } from './seeker/seeker.module';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './/app-routing.module';
+import { MaterialModule } from './shared/material.module';
 
 
 @NgModule({
@@ -16,13 +17,8 @@ import { AppRoutingModule } from './/app-routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterialModule,
     FormsModule,
-    // MatButtonModule,
-    // MatCardModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-     MatGridListModule,
     SeekerModule,
     AppRoutingModule
   ],
