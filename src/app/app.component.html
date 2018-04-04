@@ -1,16 +1,28 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="accent">
   <span>{{title}}</span>
-  <button mat-icon-button [matMenuTriggerFor]="seekerMenu">
+
+  <button mat-button [matMenuTriggerFor]="seekerMenu">
     <menu type="toolbar">Seeker</menu>
   </button>
+
+  <button mat-button [matMenuTriggerFor]="recruiterMenu">
+    <menu type="toolbar">Recruiter</menu>
+  </button>
+
 </mat-toolbar>
 
 <mat-menu #seekerMenu="matMenu">
-  <button mat-menu-item><a routerLink="/seeker/register">Seeker Registration</a></button>
+  <button mat-menu-item>
+    <a routerLink="/seeker/register">Register</a>
+  </button>
   <button mat-menu-item>Help</button>
 </mat-menu>
 
+<mat-menu #recruiterMenu="matMenu">
+  <button mat-menu-item>
+    <a routerLink="/recruiter/register">Register</a>
+  </button>
+  <button mat-menu-item>Help</button>
+</mat-menu>
 
 <router-outlet></router-outlet>
-
-
