@@ -1,41 +1,25 @@
 <mat-card>
 
-  <!-- <div class="form-container">
-
-    <mat-form-field>
-      <input matInput placeholder="Enter your email" [formControl]="email" required>
-      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Enter a password" [type]="hidePassword ? 'password' : 'text'">
-      <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility' : 'visibility_off' }}</mat-icon>
-    </mat-form-field>
-
-    <button mat-button>Next</button>
-  </div> -->
-
-
   <mat-horizontal-stepper>
 
-    <mat-step [stepControl]="Step1Group">
+    <mat-step [stepControl]="signupForm">
 
-      <form [formGroup]="Step1Group">
+      <form (ngSubmit)="saveSignup()" [formGroup]="signupForm">
 
         <ng-template matStepLabel>Login details</ng-template>
 
         <div>
-          <mat-form-field>
-            <!-- [formControl]="email" required -->
+          <mat-form-field class="field-full-width">
             <input matInput placeholder="Enter your email" formControlName="email">
-            <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+            <mat-error *ngIf="!signupForm.get('email').valid"><mat-icon>warning</mat-icon> Your email doesn't look right.</mat-error>
           </mat-form-field>
         </div>
 
         <div>
-          <mat-form-field>
+          <mat-form-field class="field-full-width">
             <input matInput placeholder="Enter a password" formControlName="password" [type]="hidePassword ? 'password' : 'text'">
             <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{ hidePassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+            <mat-error *ngIf="!signupForm.get('password').valid"><mat-icon>warning</mat-icon> Please enter a password.</mat-error>
           </mat-form-field>
         </div>
 
@@ -43,11 +27,10 @@
           <mat-checkbox formControlName="terms">I agree with the
             <a href="#">terms and conditions</a>
           </mat-checkbox>
-
         </div>
+
         <div class="actions">
-          <!-- <button mat-button matStepperPrevious>Back</button> -->
-          <button mat-raised-button color="primary" matStepperNext>Next</button>
+          <button mat-raised-button type="submit" color="primary" [disabled]="!signupForm.valid" matStepperNext>Next</button>
         </div>
 
       </form>
@@ -74,4 +57,26 @@
 
   </mat-horizontal-stepper>
 
+</mat-card>
+
+<mat-card>
+
+  <mat-list>
+
+    <mat-list-item>
+      <h3>Signup form</h3>
+    </mat-list-item>
+    <mat-list-item>
+      Dirty: {{ signupForm.dirty }}
+    </mat-list-item>
+    <mat-list-item>
+      Touched: {{ signupForm.touched }}
+    </mat-list-item>
+    <mat-list-item>
+      Valid: {{ signupForm.valid }}
+    </mat-list-item>
+    <mat-list-item>
+      Value: {{ signupForm.value | json }}
+    </mat-list-item>
+  </mat-list>
 </mat-card>
