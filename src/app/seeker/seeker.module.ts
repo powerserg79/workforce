@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
+import { ProfileComponent } from './profile/profile.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   declarations: [
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ]
 })
 export class SeekerModule { }

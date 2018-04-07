@@ -14,8 +14,7 @@ import {
   MatListModule,
   MatCheckboxModule,
   MatDatepickerModule
-}
-  from '@angular/material';
+} from '@angular/material';
 
 /*
   complete list would be
