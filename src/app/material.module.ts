@@ -12,7 +12,8 @@ import {
   MatStepperModule,
   MatSidenavModule,
   MatListModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatDatepickerModule
 }
   from '@angular/material';
 
@@ -66,7 +67,8 @@ import {
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDatepickerModule
   ],
   exports: [
     MatMenuModule,
@@ -80,7 +82,8 @@ import {
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDatepickerModule
   ]
 })
 export class MaterialModule { }

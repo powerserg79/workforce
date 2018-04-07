@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, ReactiveFormsModule, FormBuilder, AbstractControl } from '@angular/forms';
 import { SignUpModel } from './signup';
+import { OBSERVABLE_MEDIA_PROVIDER_FACTORY } from '@angular/flex-layout';
 
+function birthdayValidator(c: AbstractControl): { [key: string]: boolean } | null {
+
+c.value
+
+  return null;
+}
 
 @Component({
   selector: 'app-register',
@@ -10,7 +17,7 @@ import { SignUpModel } from './signup';
 })
 export class RegisterComponent implements OnInit {
   signupForm: FormGroup;
-  Step2Group: FormGroup;
+  detailsGroup: FormGroup;
 
   signupModel: SignUpModel = new SignUpModel();
 
@@ -25,17 +32,27 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = this._formBuilder.group({
-                    email: [{ value: '', disabled: false }, [Validators.required, Validators.email]],
-                    password: [{ value: '', disabled: false }, Validators.required],
-                    terms: [false, Validators.pattern('true')]
+      email: [{ value: '', disabled: false }, [Validators.required, Validators.email]],
+      password: [{ value: '', disabled: false }, Validators.required],
+      terms: [false, Validators.pattern('true')]
     });
-    this.Step2Group = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+
+    this.detailsGroup = this._formBuilder.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      dateofbirth:['', Validators.required]
     });
+
+    this.signupForm.get('email').valueChanges.subscribe(value => console.log(value));
   }
 
   saveSignup(): void {
     console.log('signup submitted.');
+  }
+
+
+  saveDetails(): void {
+    console.log('details submitted.');
   }
 
 }
